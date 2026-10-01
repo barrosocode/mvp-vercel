@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&amp;family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,400&amp;family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "primary-fixed-dim": "#b4c5ff", "brand-blue-soft": "#EFF6FF", "primary-container": "#2563eb", "outline-variant": "#c3c6d7", "surface-dim": "#cbdbf5", "on-primary-fixed-variant": "#003ea8", "surface-container-lowest": "#ffffff", "tertiary-container": "#007d55", "tertiary-fixed": "#6ffbbe", "on-primary-fixed": "#00174b", "primary-fixed": "#dbe1ff", "surface-variant": "#d3e4fe", "on-tertiary-fixed": "#002113", "inverse-on-surface": "#eaf1ff", "surface-container-low": "#eff4ff", "surface-ground": "#F8FAFC", "brand-coral-soft": "#FFF1F2", "surface-container-highest": "#d3e4fe", "on-error": "#ffffff", "surface-container": "#e5eeff", "on-tertiary-fixed-variant": "#005236", "surface-container-high": "#dce9ff", "on-secondary-container": "#684000", "text-body": "#334155", "inverse-primary": "#b4c5ff", "outline": "#737686", "brand-coral": "#F43F5E", "secondary": "#855300", "secondary-fixed-dim": "#ffb95f", "on-tertiary": "#ffffff", "secondary-container": "#fea619", "error": "#ba1a1a", "surface-tint": "#0053db", "text-heading": "#0F172A", "on-tertiary-container": "#bdffdb", "surface-card": "#FFFFFF", "on-background": "#0b1c30", "error-container": "#ffdad6", "brand-sunshine": "#FEF3C7", "on-secondary-fixed-variant": "#653e00", "brand-mint": "#ECFDF5", "tertiary": "#006242", "on-primary": "#ffffff", "on-error-container": "#93000a", "on-surface": "#0b1c30", "secondary-fixed": "#ffddb8", "surface": "#f8f9ff", "on-surface-variant": "#434655", "primary": "#004ac6", "background": "#f8f9ff", "on-secondary-fixed": "#2a1700", "surface-bright": "#f8f9ff", "on-primary-container": "#eeefff", "inverse-surface": "#213145", "on-secondary": "#ffffff", "tertiary-fixed-dim": "#4edea3" }, "borderRadius": { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, "spacing": { "space-md": "1rem", "space-lg": "1.5rem", "gutter": "1.5rem", "gutter-mobile": "1rem", "margin-mobile": "1.25rem", "space-xl": "2.5rem", "space-xs": "0.25rem", "margin": "2rem", "space-sm": "0.5rem", "space-xxl": "4rem" }, "fontFamily": { "display-hero-mobile": [ "Comfortaa" ], "headline-lg": [ "Comfortaa" ], "body-lg": [ "Nunito Sans" ], "display-hero": [ "Comfortaa" ], "label-lg": [ "Nunito Sans" ], "headline-sm": [ "Comfortaa" ], "label-md": [ "Nunito Sans" ], "body-sm": [ "Nunito Sans" ], "title-card": [ "Comfortaa" ], "headline-md": [ "Comfortaa" ], "label-sm": [ "Nunito Sans" ], "headline-lg-mobile": [ "Comfortaa" ], "body-md": [ "Nunito Sans" ] }, "fontSize": { "display-hero-mobile": [ "32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" } ], "headline-lg": [ "36px", { "lineHeight": "44px", "fontWeight": "700" } ], "body-lg": [ "18px", { "lineHeight": "28px", "fontWeight": "400" } ], "display-hero": [ "48px", { "lineHeight": "58px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "label-lg": [ "16px", { "lineHeight": "20px", "fontWeight": "700" } ], "headline-sm": [ "20px", { "lineHeight": "28px", "fontWeight": "600" } ], "label-md": [ "14px", { "lineHeight": "18px", "fontWeight": "700" } ], "body-sm": [ "14px", { "lineHeight": "22px", "fontWeight": "400" } ], "title-card": [ "18px", { "lineHeight": "24px", "fontWeight": "700" } ], "headline-md": [ "28px", { "lineHeight": "36px", "fontWeight": "600" } ], "label-sm": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "700" } ], "headline-lg-mobile": [ "26px", { "lineHeight": "34px", "fontWeight": "700" } ], "body-md": [ "16px", { "lineHeight": "26px", "fontWeight": "400" } ] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_4px_24px_rgba(37,99,235,0.06)]"><div class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm border-b border-surface-variant/40"><div class="max-w-7xl mx-auto px-6 lg:px-12 h-10 flex items-center justify-between"><div class="flex items-center gap-6"><span class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px] text-primary">mail</span>contato@akilieduc.com.br</span><span class="hidden sm:flex items-center gap-2"><span class="material-symbols-outlined text-[16px] text-tertiary-container">call</span>(11) 4002-8922</span></div><div class="flex items-center gap-4"><span>Ambiente Seguro &amp; Confiável</span><span class="material-symbols-outlined text-[16px] text-secondary-container">verified_user</span></div></div></div><div class="h-20 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between"><a class="flex items-center gap-3" data-path="home" href="#"><div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center shadow-[0_4px_12px_rgba(37,99,235,0.25)]"><span class="material-symbols-outlined text-on-primary text-[24px]">school</span></div><span class="font-headline-md text-headline-sm text-primary tracking-tight font-bold">Akili<span class="text-secondary-container ml-1 font-headline-md text-headline-sm">Educ</span></span></a><nav class="hidden xl:flex items-center gap-2" data-active-classes="bg-brand-blue-soft text-primary-container font-label-md font-bold rounded-full px-4 py-2"><a aria-current="page" class="transition-colors bg-brand-blue-soft text-primary-container font-label-md font-bold rounded-full px-4 py-2" data-path="home" href="#">Home</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface px-4 py-2 rounded-full transition-colors" data-path="o-metodo" href="#">O Método</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface px-4 py-2 rounded-full transition-colors" data-path="como-funciona" href="#">Como Funciona</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface px-4 py-2 rounded-full transition-colors" data-path="para-a-familia" href="#">Para a Família</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface px-4 py-2 rounded-full transition-colors" data-path="planos" href="#">Planos</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface px-4 py-2 rounded-full transition-colors" data-path="faq" href="#">FAQ</a></nav><div class="flex items-center gap-3"><a class="hidden sm:inline-flex items-center font-label-md text-label-md text-primary hover:text-primary-container px-4 py-2.5 rounded-full transition-colors" data-path="planos" href="#">Entrar</a><a class="inline-flex items-center gap-2 font-label-md text-label-md bg-primary-container text-on-primary px-6 py-2.5 rounded-full shadow-[0_8px_20px_-4px_rgba(37,99,235,0.35)] hover:opacity-95 transition-all hover:scale-[1.02]" data-path="cadastre-se" href="#">Quero ver como funciona<span class="material-symbols-outlined text-[18px]">arrow_forward</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-[7.5rem] bg-surface min-h-[calc(100vh-280px)]"><div class="flex flex-col w-full">
+<!-- Top Accessibility Quickbar (Brand Pill Component) -->
+<aside aria-label="Acessibilidade e Ajustes Visuais" class="w-full bg-surface-container-low py-2.5 px-6">
+<div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-brand-mint text-tertiary">
+<span class="material-symbols-outlined text-[14px]">psychology</span>
+</span>
+<span class="font-bold text-on-surface">Design Neuro-Acolhedor:</span>
+<span class="hidden sm:inline">Baixa sobrecarga cognitiva, cores suaves e foco guiado.</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-on-surface-variant">Tamanho do texto:</span>
+<button aria-label="Diminuir fonte" class="w-7 h-7 rounded-full bg-surface-container-lowest text-primary font-bold shadow-sm hover:bg-brand-blue-soft transition-colors flex items-center justify-center" id="btn-font-dec" type="button">A-</button>
+<button aria-label="Aumentar fonte" class="w-7 h-7 rounded-full bg-surface-container-lowest text-primary font-bold shadow-sm hover:bg-brand-blue-soft transition-colors flex items-center justify-center" id="btn-font-inc" type="button">A+</button>
+<span class="h-4 w-px bg-outline-variant/40 mx-1"></span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest text-tertiary font-bold shadow-sm">
+<span class="material-symbols-outlined text-[14px] text-tertiary">verified</span>
+          Pedagogia Validada
+        </span>
+</div>
+</div>
+</aside>
+<!-- 1. HERO SECTION -->
+<section class="relative w-full py-space-xl lg:py-space-xxl overflow-hidden bg-gradient-to-b from-brand-blue-soft/50 via-surface to-surface">
+<!-- Decorative Ambient Blobs -->
+<div class="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-primary-fixed/30 blur-3xl pointer-events-none"></div>
+<div class="absolute top-1/2 -right-24 w-80 h-80 rounded-full bg-brand-sunshine/40 blur-3xl pointer-events-none"></div>
+<div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+<!-- Trust Pill Row -->
+<div class="flex flex-wrap items-center gap-2.5 mb-8">
+<span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-blue-soft text-primary font-label-sm text-label-sm shadow-sm">
+<span class="material-symbols-outlined text-[16px]">menu_book</span>
+          Conteúdo do 3º trimestre alinhado à BNCC
+        </span>
+<span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-sunshine text-on-secondary-container font-label-sm text-label-sm shadow-sm">
+<span class="material-symbols-outlined text-[16px]">event_upcoming</span>
+          Cronograma inteligente até as provas
+        </span>
+<span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-mint text-tertiary font-label-sm text-label-sm shadow-sm">
+<span class="material-symbols-outlined text-[16px]">bolt</span>
+          Feedback imediato em cada questão
+        </span>
+<span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-coral-soft text-brand-coral font-label-sm text-label-sm shadow-sm">
+<span class="material-symbols-outlined text-[16px]">family_restroom</span>
+          Painel em tempo real para a família
+        </span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+<!-- Text Column -->
+<div class="lg:col-span-7 flex flex-col gap-6">
+<div class="inline-flex items-center gap-2 text-brand-coral font-label-md text-label-md uppercase tracking-wider">
+<span class="w-2.5 h-2.5 rounded-full bg-brand-coral animate-pulse"></span>
+            A virada na rotina de estudos
+          </div>
+<h1 class="font-headline-lg text-headline-lg text-text-heading leading-tight tracking-tight">
+            Ele estudou a tarde inteira.<br/>
+<span class="text-primary-container">Por que tirou 5,5?</span>
+</h1>
+<p class="font-body-lg text-body-lg text-text-body max-w-2xl">
+            Porque reler e grifar <strong class="text-on-surface font-bold">não é aprender</strong>. A Akili transforma o conteúdo do trimestre em lições curtas e cinco camadas de prática que só deixam avançar quem realmente entendeu. Monta o cronograma até as provas. E mostra para você, em tempo real, o que ele já domina.
+          </p>
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+<a class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-primary-container text-on-primary font-label-lg text-label-lg shadow-[0_10px_25px_-5px_rgba(37,99,235,0.4)] hover:scale-[1.02] hover:shadow-[0_16px_32px_-6px_rgba(37,99,235,0.45)] transition-all" href="#planos">
+<span>Quero ver como funciona</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</a>
+<a class="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full bg-surface-container-lowest text-primary font-label-md text-label-md shadow-sm hover:bg-surface-container-low transition-all" href="#o-metodo">
+<span class="material-symbols-outlined text-[18px]">play_circle</span>
+              Conheça as 5 Camadas
+            </a>
+</div>
+<!-- Micro Proof Bar -->
+<div class="pt-4 flex items-center gap-4 text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold text-xs shadow-sm">98%</div>
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary flex items-center justify-center font-bold text-xs shadow-sm">BNCC</div>
+<div class="w-8 h-8 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-bold text-xs shadow-sm"><span class="material-symbols-outlined text-[14px]">star</span></div>
+</div>
+<span>Mais de <strong class="text-on-surface font-bold">12.400 horas</strong> de estudo produtivo sem conflitos familiares.</span>
+</div>
+</div>
+<!-- Visual Hero Showcase: Student Focus & Live Dashboard -->
+<div class="lg:col-span-5 relative">
+<!-- Floating Background Glow -->
+<div class="absolute inset-0 bg-gradient-to-tr from-primary-fixed-dim/40 to-brand-sunshine/30 rounded-xl blur-xl -rotate-2 transform"></div>
+<!-- Main Interactive Composition Card -->
+<div class="relative bg-surface-card rounded-lg p-6 lg:p-8 shadow-[0_16px_36px_rgba(37,99,235,0.10)] flex flex-col gap-5">
+<!-- Header of Mockup UI -->
+<div class="flex items-center justify-between pb-4 border-b border-surface-variant/40">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-brand-blue-soft text-primary-container flex items-center justify-center font-bold">
+<span class="material-symbols-outlined text-[20px]">person</span>
+</div>
+<div>
+<p class="font-title-card text-title-card text-on-surface leading-none">Lucas Nogueira</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">8º Ano • Próxima prova em 9 dias</p>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-brand-mint text-tertiary font-label-sm text-label-sm font-bold">
+<span class="w-2 h-2 rounded-full bg-tertiary-container animate-ping"></span>
+                Em foco
+              </span>
+</div>
+<!-- Focus Module: Short Lesson -->
+<div class="bg-surface-container-low rounded-DEFAULT p-4 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">Tópico de Hoje • Química</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">12 min sugeridos</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface leading-snug">Misturas Homogêneas vs. Heterogêneas</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Quadro “Quando a intuição engana”: o leite parece homogêneo a olho nu, mas é coloide heterogêneo no microscópio!
+              </p>
+</div>
+<!-- Live 5-Layer Progress Bar in Hero -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface font-bold">Progresso das 5 Camadas de Domínio</span>
+<span class="text-primary-container font-bold">80% Dominado</span>
+</div>
+<div class="grid grid-cols-5 gap-1.5 h-3">
+<div class="bg-tertiary-container rounded-full" title="Conferência OK"></div>
+<div class="bg-tertiary-container rounded-full" title="Revisão 1 OK"></div>
+<div class="bg-tertiary-container rounded-full" title="Revisão 2 OK"></div>
+<div class="bg-tertiary-container rounded-full" title="Revisão 3 OK"></div>
+<div class="bg-surface-container-high rounded-full relative overflow-hidden" title="Desafio Final">
+<div class="w-1/2 h-full bg-secondary-container rounded-full"></div>
+</div>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant px-0.5">
+<span>Conf.</span>
+<span>Rev 1</span>
+<span>Rev 2</span>
+<span>Rev 3</span>
+<span class="text-secondary-container font-bold">Desafio</span>
+</div>
+</div>
+<!-- Parent Realtime Floating Feedback Note -->
+<div class="bg-brand-sunshine/60 rounded-DEFAULT p-3.5 flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary-container text-[22px] shrink-0">notifications_active</span>
+<div class="flex flex-col">
+<p class="font-label-md text-label-md text-on-secondary-container font-bold">Atualização no Painel dos Pais</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  “Lucas errou o conceito de fases na camada 2, revisou a explicação e gabaritou a camada 3 sem auxílio.”
+                </p>
+</div>
+</div>
+</div>
+<!-- Decorative Floating Medal Badge -->
+<div class="hidden sm:flex absolute -bottom-6 -left-6 bg-surface-card rounded-full py-2.5 px-5 shadow-[0_12px_28px_rgba(0,0,0,0.08)] items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">military_tech</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant leading-none">Medalha desbloqueada</p>
+<p class="font-label-md text-label-md text-on-surface font-bold">Assunto Dominado</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. A DOR: RECONHECE ALGUMA DESSAS CENAS? -->
+<section class="w-full py-space-xl lg:py-space-xxl bg-surface-ground">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col gap-12">
+<!-- Section Header -->
+<div class="max-w-3xl flex flex-col gap-3">
+<span class="inline-flex items-center gap-2 text-brand-coral font-label-md text-label-md font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-[18px]">sentiment_dissatisfied</span>
+          A Dor Silenciosa da Rotina Escolar
+        </span>
+<h2 class="font-headline-lg text-headline-lg text-text-heading">
+          Reconhece alguma dessas cenas?
+        </h2>
+<p class="font-body-md text-body-md text-text-body">
+          Você gasta tempo, energia e paciência tentando ajudar. O seu filho jura que está estudando, mas o resultado não reflete o esforço. Onde está o problema?
+        </p>
+</div>
+<!-- 7 Real Frustration Scenarios Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Scene 1 -->
+<div class="bg-surface-card rounded-lg p-6 shadow-sm hover:shadow-[0_12px_28px_rgba(37,99,235,0.08)] transition-all flex flex-col justify-between gap-4">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-full bg-brand-coral-soft text-brand-coral flex items-center justify-center font-bold font-title-card text-title-card">1</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-bold">O branco súbito</span>
+</div>
+<p class="font-title-card text-title-card text-on-surface">
+            “Na véspera ele sabia tudo. Na prova, deu branco.”
+          </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            A sensação de segurança era apenas memória de curtíssimo prazo com pistas do livro aberto.
+          </p>
+</div>
+<!-- Scene 2 -->
+<div class="bg-surface-card rounded-lg p-6 shadow-sm hover:shadow-[0_12px_28px_rgba(37,99,235,0.08)] transition-all flex flex-col justify-between gap-4">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-full bg-brand-coral-soft text-brand-coral flex items-center justify-center font-bold font-title-card text-title-card">2</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-bold">A lista manjada</span>
+</div>
+<p class="font-title-card text-title-card text-on-surface">
+            “Ele resolveu a lista da escola inteira. A prova tinha perguntas ‘diferentes’.”
+          </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Ele memorizou os padrões visuais daquele exercício específico, não a lógica aplicável.
+          </p>
+</div>
+<!-- Scene 3 -->
+<div class="bg-surface-card rounded-lg p-6 shadow-sm hover:shadow-[0_12px_28px_rgba(37,99,235,0.08)] transition-all flex flex-col justify-between gap-4">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-full bg-brand-coral-soft text-brand-coral flex items-center justify-center font-bold font-title-card text-title-card">3</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-bold">O diálogo no escuro</span>
+</div>
+<p class="font-title-card text-title-card text-on-surface">
+            “Você pergunta ‘estudou?’ e ele diz ‘estudei’. E você não tem como saber.”
+          </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Sem parâmetro objetivo, sobra a cobrança verbal que desgasta a relação entre pais e filhos.
+          </p>
+</div>
+<!-- Scene 4 -->
+<div class="bg-surface-card rounded-lg p-6 shadow-sm hover:shadow-[0_12px_28px_rgba(37,99,235,0.08)] transition-all flex flex-col justify-between gap-4">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-full bg-brand-coral-soft text-brand-coral flex items-center justify-center font-bold font-title-card text-title-card">4</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-bold">A leitura passiva</span>
+</div>
+<p class="font-title-card text-title-card text-on-surface">
+            “Ele leu o capítulo três vezes e continua sem saber explicar.”
+          </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Reler é o método menos eficaz segundo a neurociência: os olhos passam, mas o cérebro não processa.
+          </p>
+</div>
+<!-- Scene 5 -->
+<div class="bg-surface-card rounded-lg p-6 shadow-sm hover:shadow-[0_12px_28px_rgba(37,99,235,0.08)] transition-all flex flex-col justify-between gap-4">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-full bg-brand-coral-soft text-brand-coral flex items-center justify-center font-bold font-title-card text-title-card">5</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-bold">A dispersão sem fim</span>
+</div>
+<p class="font-title-card text-title-card text-on-surface">
+            “Ele começa, para, pega o celular, volta. Duas horas depois, nada.”
+          </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Material extenso assusta o foco de quem está em desenvolvimento cognitivo. Falta chunking (microdoses).
+          </p>
+</div>
+<!-- Scene 6 -->
+<div class="bg-surface-card rounded-lg p-6 shadow-sm hover:shadow-[0_12px_28px_rgba(37,99,235,0.08)] transition-all flex flex-col justify-between gap-4">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-full bg-brand-coral-soft text-brand-coral flex items-center justify-center font-bold font-title-card text-title-card">6</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-bold">O caos do cronograma</span>
+</div>
+<p class="font-title-card text-title-card text-on-surface">
+            “Faltam duas semanas para a prova e ninguém sabe o que estudar em qual dia.”
+          </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            A sobrecarga de matérias acumuladas gera ansiedade paralisante e noites de desespero familiar.
+          </p>
+</div>
+<!-- Scene 7 (Full width on tablet/desktop row) -->
+<div class="md:col-span-2 lg:col-span-3 bg-surface-card rounded-lg p-6 shadow-sm hover:shadow-[0_12px_28px_rgba(37,99,235,0.08)] transition-all flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+<div class="flex items-center gap-4">
+<span class="w-10 h-10 rounded-full bg-brand-coral-soft text-brand-coral flex items-center justify-center font-bold font-title-card text-title-card shrink-0">7</span>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-bold">O rótulo injusto</span>
+<p class="font-title-card text-title-card text-on-surface">
+                “Ele tirou nota baixa e agora acha que não é bom naquela matéria.”
+              </p>
+</div>
+</div>
+<div class="bg-surface-container-low px-4 py-2 rounded-full text-brand-coral font-label-md text-label-md shrink-0">
+            Impacto direto na autoestima
+          </div>
+</div>
+</div>
+<!-- Neuroscientific Insight Card -->
+<div class="w-full bg-gradient-to-r from-primary-container to-primary text-on-primary rounded-xl p-8 lg:p-12 shadow-xl flex flex-col lg:flex-row items-center gap-8">
+<div class="w-16 h-16 rounded-full bg-surface-container-lowest/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[36px] text-on-primary">neurology</span>
+</div>
+<div class="flex flex-col gap-3">
+<p class="font-headline-sm text-headline-sm text-secondary-fixed">
+            “Ele é inteligente. Por que estudar parece tão difícil para ele?”
+          </p>
+<p class="font-body-lg text-body-lg text-on-primary leading-relaxed">
+<strong class="font-bold underline decoration-secondary-container decoration-2 underline-offset-4">Não é ele. É o método.</strong> Reler, grifar e refazer a mesma lista cria a sensação ilusória de que aprendeu. O cérebro reconhece o conteúdo e confunde <em>reconhecer</em> com <em>saber</em>. A prova é o primeiro lugar onde essa ilusão aparece. <span class="bg-surface-container-lowest/20 px-2 py-0.5 rounded-full font-bold">Com a Akili, essa ilusão se desfaz antes da prova.</span>
+</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. O COMPROMISSO E AS 5 CAMADAS -->
+<section class="w-full py-space-xl lg:py-space-xxl bg-surface" id="o-metodo">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col gap-12">
+<!-- Section Header -->
+<div class="max-w-3xl flex flex-col gap-3">
+<span class="inline-flex items-center gap-2 text-primary font-label-md text-label-md font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+          Método Científico Progressivo
+        </span>
+<h2 class="font-headline-lg text-headline-lg text-text-heading">
+          Nosso compromisso: aprender de verdade tem prova, e ela acontece antes da prova da escola.
+        </h2>
+<p class="font-body-md text-body-md text-text-body">
+          Na Akili, cada tópico do trimestre vira uma lição curta e cinco rodadas de questões que vão ficando mais exigentes. Se ele decorou, ele trava na segunda. Se ele entendeu, ele chega ao Desafio e conquista a medalha de assunto dominado. Você vê onde ele parou. Sem adivinhar, sem brigar, sem depender do “estudei”.
+        </p>
+</div>
+<!-- 5 Layers Visual Pipeline -->
+<div class="grid grid-cols-1 md:grid-cols-5 gap-4 relative">
+<!-- Layer 1 -->
+<div class="bg-surface-card rounded-lg p-5 shadow-sm flex flex-col justify-between gap-4 border-b-4 border-brand-blue-soft">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">01</span>
+<span class="material-symbols-outlined text-primary text-[24px]">fact_check</span>
+</div>
+<div>
+<h3 class="font-title-card text-title-card text-on-surface">Conferência</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Fixação Inicial</p>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Checa imediatamente após a lição se a ideia central ficou gravada de forma clara.
+          </p>
+<div class="pt-2">
+<span class="inline-block w-full py-1.5 text-center font-label-sm text-label-sm rounded-full bg-brand-blue-soft text-primary font-bold">Medalha Tentativa</span>
+</div>
+</div>
+<!-- Layer 2 -->
+<div class="bg-surface-card rounded-lg p-5 shadow-sm flex flex-col justify-between gap-4 border-b-4 border-brand-mint">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-tertiary font-bold">02</span>
+<span class="material-symbols-outlined text-tertiary text-[24px]">replay_circle_filled</span>
+</div>
+<div>
+<h3 class="font-title-card text-title-card text-on-surface">Revisão 1</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Espaçamento Inicial</p>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Traz o conceito de volta no dia seguinte com novas formulações e sem dicas visuais.
+          </p>
+<div class="pt-2">
+<span class="inline-block w-full py-1.5 text-center font-label-sm text-label-sm rounded-full bg-brand-mint text-tertiary font-bold">Medalha Atenção</span>
+</div>
+</div>
+<!-- Layer 3 -->
+<div class="bg-surface-card rounded-lg p-5 shadow-sm flex flex-col justify-between gap-4 border-b-4 border-brand-mint">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-tertiary font-bold">03</span>
+<span class="material-symbols-outlined text-tertiary text-[24px]">sync</span>
+</div>
+<div>
+<h3 class="font-title-card text-title-card text-on-surface">Revisão 2</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Aprofundamento</p>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Mistura questões contextuais para quebrar a decoreba mecânica de alternativas.
+          </p>
+<div class="pt-2">
+<span class="inline-block w-full py-1.5 text-center font-label-sm text-label-sm rounded-full bg-brand-mint text-tertiary font-bold">Medalha Prática</span>
+</div>
+</div>
+<!-- Layer 4 -->
+<div class="bg-surface-card rounded-lg p-5 shadow-sm flex flex-col justify-between gap-4 border-b-4 border-brand-sunshine">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-secondary-container font-bold">04</span>
+<span class="material-symbols-outlined text-secondary-container text-[24px]">verified</span>
+</div>
+<div>
+<h3 class="font-title-card text-title-card text-on-surface">Revisão 3</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Consolidação</p>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Testa a retenção após intervalo temporal, garantindo que o conteúdo não evapore.
+          </p>
+<div class="pt-2">
+<span class="inline-block w-full py-1.5 text-center font-label-sm text-label-sm rounded-full bg-brand-sunshine text-on-secondary-container font-bold">Medalha Proficiência</span>
+</div>
+</div>
+<!-- Layer 5 (Hero of the Layers) -->
+<div class="bg-surface-card rounded-lg p-5 shadow-md flex flex-col justify-between gap-4 border-b-4 border-secondary-container">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-secondary-container font-bold">05</span>
+<span class="material-symbols-outlined text-secondary-container text-[28px]">military_tech</span>
+</div>
+<div>
+<h3 class="font-title-card text-title-card text-on-surface">Desafio Final</h3>
+<p class="font-label-sm text-label-sm text-secondary font-bold mt-1">Situação Inédita</p>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Questão complexa que exige aplicar o conceito em contexto novo, exatamente como na prova.
+          </p>
+<div class="pt-2">
+<span class="inline-block w-full py-1.5 text-center font-label-sm text-label-sm rounded-full bg-secondary-container text-on-secondary font-bold shadow-sm">Assunto Dominado</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. COMO A AKILI FAZ ISSO (8 Pilares Estruturados) -->
+<section class="w-full py-space-xl lg:py-space-xxl bg-surface-container-low" id="como-funciona">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col gap-12">
+<!-- Section Header -->
+<div class="max-w-3xl flex flex-col gap-3">
+<span class="inline-flex items-center gap-2 text-primary font-label-md text-label-md font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-[18px]">build</span>
+          Engenharia Pedagógica
+        </span>
+<h2 class="font-headline-lg text-headline-lg text-text-heading">
+          Como a Akili faz isso na prática
+        </h2>
+<p class="font-body-md text-body-md text-text-body">
+          Oito mecanismos neuroeducacionais desenhados para substituir o desespero por autonomia, foco e confiança.
+        </p>
+</div>
+<!-- 8 Pillars Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Pillar 1 -->
+<div class="bg-surface-card rounded-lg p-6 shadow-sm hover:shadow-[0_12px_28px_rgba(37,99,235,0.08)] transition-all flex flex-col gap-4">
+<div class="w-12 h-12 rounded-full bg-brand-blue-soft text-primary-container flex items-center justify-center font-headline-sm text-headline-sm font-bold">1</div>
+<h3 class="font-title-card text-title-card text-on-surface">O cronograma nasce das provas dele, não de um modelo pronto.</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Você informa os horários que ele tem livres em cada dia e as datas das provas. A Akili distribui o que precisa ser estudado, dia a dia, até cada prova. Ele abre e sabe exatamente o que fazer hoje. Acabou o “por onde eu começo?”.
+          </p>
+</div>
+<!-- Pillar 2 -->
+<div class="bg-surface-card rounded-lg p-6 shadow-sm hover:shadow-[0_12px_28px_rgba(37,99,235,0.08)] transition-all flex flex-col gap-4">
+<div class="w-12 h-12 rounded-full bg-brand-sunshine text-on-secondary-container flex items-center justify-center font-headline-sm text-headline-sm font-bold">2</div>
+<h3 class="font-title-card text-title-card text-on-surface">A lição cabe na atenção dele.</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Cada tópico vem em quadros curtos: a ideia central, uma situação concreta que dá sentido ao conceito, glossário e síntese. Um foco de cada vez. Dá para começar sem sofrimento e terminar antes de perder a concentração.
+          </p>
+</div>
+<!-- Pillar 3 -->
+<div class="bg-surface-card rounded-lg p-6 shadow-sm hover:shadow-[0_12px_28px_rgba(37,99,235,0.08)] transition-all flex flex-col gap-4">
+<div class="w-12 h-12 rounded-full bg-brand-coral-soft text-brand-coral flex items-center justify-center font-headline-sm text-headline-sm font-bold">3</div>
+<h3 class="font-title-card text-title-card text-on-surface">Ele aprende o erro antes de cometer.</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Toda lição tem o quadro “quando a intuição engana”: o erro que quase todo aluno comete naquele assunto e por que ele parece certo. Ele passa a desconfiar da resposta fácil. É exatamente isso que as provas testam.
+          </p>
+</div>
+<!-- Pillar 4 -->
+<div class="bg-surface-card rounded-lg p-6 shadow-sm hover:shadow-[0_12px_28px_rgba(37,99,235,0.08)] transition-all flex flex-col gap-4">
+<div class="w-12 h-12 rounded-full bg-brand-mint text-tertiary flex items-center justify-center font-headline-sm text-headline-sm font-bold">4</div>
+<h3 class="font-title-card text-title-card text-on-surface">Cinco camadas. Ninguém decora o gabarito.</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Conferência, Revisão 1, 2, 3 e Desafio. Questões novas em cada camada, alternativas embaralhadas a cada tentativa. A Conferência checa se o conteúdo ficou. As Revisões e o Desafio cobram usar o conteúdo em situação nova.
+          </p>
+</div>
+<!-- Pillar 5 -->
+<div class="bg-surface-card rounded-lg p-6 shadow-sm hover:shadow-[0_12px_28px_rgba(37,99,235,0.08)] transition-all flex flex-col gap-4">
+<div class="w-12 h-12 rounded-full bg-brand-blue-soft text-primary flex items-center justify-center font-headline-sm text-headline-sm font-bold">5</div>
+<h3 class="font-title-card text-title-card text-on-surface">Errou? Aprende na hora.</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Cada resposta traz o resultado, a alternativa certa e a explicação completa, enquanto o raciocínio ainda está fresco. O erro deixa de ser nota vermelha e vira o momento em que a ficha cai.
+          </p>
+</div>
+<!-- Pillar 6 -->
+<div class="bg-surface-card rounded-lg p-6 shadow-sm hover:shadow-[0_12px_28px_rgba(37,99,235,0.08)] transition-all flex flex-col gap-4">
+<div class="w-12 h-12 rounded-full bg-brand-sunshine text-secondary-container flex items-center justify-center font-headline-sm text-headline-sm font-bold">6</div>
+<h3 class="font-title-card text-title-card text-on-surface">Cada conquista tem nome.</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Conforme acerta, ele ganha medalhas: Tentativa, quando encara o tópico; Proficiência, quando mostra que entendeu; Assunto dominado, quando prova que sabe usar. É o que faz um aluno desanimado voltar no dia seguinte.
+          </p>
+</div>
+<!-- Pillar 7 -->
+<div class="bg-surface-card rounded-lg p-6 shadow-sm hover:shadow-[0_12px_28px_rgba(37,99,235,0.08)] transition-all flex flex-col gap-4">
+<div class="w-12 h-12 rounded-full bg-brand-mint text-tertiary-container flex items-center justify-center font-headline-sm text-headline-sm font-bold">7</div>
+<h3 class="font-title-card text-title-card text-on-surface">Ele revê no momento certo, sem você mandar.</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            As três revisões trazem o tópico de volta em momentos diferentes. É o que impede o conteúdo de sumir uma semana depois. O estudo ganha rotina automática sem virar cobrança exaustiva.
+          </p>
+</div>
+<!-- Pillar 8 -->
+<div class="bg-surface-card rounded-lg p-6 shadow-sm hover:shadow-[0_12px_28px_rgba(37,99,235,0.08)] transition-all flex flex-col gap-4">
+<div class="w-12 h-12 rounded-full bg-brand-coral-soft text-brand-coral flex items-center justify-center font-headline-sm text-headline-sm font-bold">8</div>
+<h3 class="font-title-card text-title-card text-on-surface">Você vê tudo. Ele sente que está no controle.</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            O painel registra automaticamente o que foi estudado, em que camada ele errou, quais medalhas conquistou e o que precisa de atenção. Você acompanha sem interrogar. Ele avança sem ser vigiado.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. PARA A FAMÍLIA -->
+<section class="w-full py-space-xl lg:py-space-xxl bg-surface" id="para-a-familia">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+<!-- Text Column -->
+<div class="lg:col-span-6 flex flex-col gap-6">
+<span class="inline-flex items-center gap-2 text-primary font-label-md text-label-md font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-[18px]">family_home</span>
+            Paz Familiar e Transparência
+          </span>
+<h2 class="font-headline-lg text-headline-lg text-text-heading">
+            Você não precisa dar aula. Precisa saber o que está acontecendo.
+          </h2>
+<p class="font-body-lg text-body-lg text-text-body">
+            Pare de perguntar no escuro. Tenha clareza imediata sobre o ritmo, as dificuldades reais e as vitórias do seu filho em cada disciplina.
+          </p>
+<div class="flex flex-col gap-4 pt-2">
+<div class="flex items-start gap-3">
+<div class="w-8 h-8 rounded-full bg-brand-blue-soft text-primary flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</div>
+<div>
+<p class="font-title-card text-title-card text-on-surface">Fim do “Estudou? Estudei.”</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Você abre o aplicativo e vê os minutos dedicados, a camada concluída e o percentual de retenção.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<div class="w-8 h-8 rounded-full bg-brand-sunshine text-secondary-container flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">warning</span>
+</div>
+<div>
+<p class="font-title-card text-title-card text-on-surface">Alertas preventivos, não pós-boletim</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Se um conceito travou na Revisão 2, o painel avisa antes que o teste escolar aconteça.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<div class="w-8 h-8 rounded-full bg-brand-mint text-tertiary flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">mood</span>
+</div>
+<div>
+<p class="font-title-card text-title-card text-on-surface">Noites tranquilas em família</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Sem choro, sem desespero de véspera e sem o peso de ser o professor substituto à noite.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Portal Mockup Card -->
+<div class="lg:col-span-6 bg-surface-container-low rounded-xl p-6 lg:p-8 flex flex-col gap-6 shadow-sm">
+<div class="flex items-center justify-between">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase font-bold">Portal dos Pais • Visão Geral</p>
+<h3 class="font-title-card text-title-card text-on-surface">Painel de Acompanhamento</h3>
+</div>
+<span class="px-3 py-1 rounded-full bg-brand-mint text-tertiary font-label-sm text-label-sm font-bold">Sincronizado</span>
+</div>
+<!-- Subject Cards in Parent View -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<!-- Subject 1 -->
+<div class="bg-surface-card rounded-lg p-4 shadow-sm flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-primary font-bold">Português</span>
+<span class="font-label-sm text-label-sm text-tertiary font-bold">92%</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface">Sintaxe &amp; Orações Subordinadas</p>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full w-[92%] rounded-full"></div>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                Assunto Dominado
+              </span>
+</div>
+<!-- Subject 2 -->
+<div class="bg-surface-card rounded-lg p-4 shadow-sm flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-secondary font-bold">Química</span>
+<span class="font-label-sm text-label-sm text-secondary-container font-bold">68%</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface">Soluções e Separações</p>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-secondary-container h-full w-[68%] rounded-full"></div>
+</div>
+<span class="font-label-sm text-label-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                Revisão 3 agendada p/ amanhã
+              </span>
+</div>
+</div>
+<!-- Diagnostic Alert -->
+<div class="bg-surface-card rounded-lg p-4 shadow-sm flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[24px] shrink-0">insights</span>
+<div class="flex flex-col">
+<p class="font-label-md text-label-md text-on-surface font-bold">Relatório da Semana</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Lucas cumpriu 100% dos blocos diários recomendados. O tempo médio de estudo diário foi de apenas 28 minutos — com retenção 3x maior que nos meses anteriores.
+              </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. SEÇÃO DE PLANOS -->
+<section class="w-full py-space-xl lg:py-space-xxl bg-surface-ground" id="planos">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col gap-12">
+<!-- Section Header -->
+<div class="text-center max-w-2xl mx-auto flex flex-col gap-3">
+<span class="inline-flex items-center justify-center gap-2 text-primary font-label-md text-label-md font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-[18px]">sell</span>
+          Acesso Completo
+        </span>
+<h2 class="font-headline-lg text-headline-lg text-text-heading">
+          Planos
+        </h2>
+<p class="font-body-md text-body-md text-text-body">
+          Escolha o formato que faz sentido para o momento do seu filho.
+        </p>
+</div>
+<!-- Pricing Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto w-full items-stretch">
+<!-- Card 1: 4º Ano -->
+<div class="bg-surface-card rounded-lg p-8 shadow-md flex flex-col justify-between gap-6 hover:shadow-[0_16px_36px_rgba(37,99,235,0.08)] transition-all">
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<span class="px-4 py-1.5 rounded-full bg-brand-blue-soft text-primary font-label-sm text-label-sm font-bold">
+                Ensino Fundamental I
+              </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Até 31/12/2026</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold">4º Ano</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                Ciências, Português, Geografia e História.
+              </p>
+</div>
+<div class="py-2">
+<div class="flex items-baseline gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface-variant">R$</span>
+<span class="font-headline-lg text-headline-lg text-primary-container font-bold">199,00</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Pix ou cartão • Acesso integral até 31/12/2026</p>
+</div>
+<div class="pt-4 border-t border-surface-variant/40 flex flex-col gap-3 font-body-sm text-body-sm text-on-surface">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary-container text-[20px]">check</span>
+<span>Módulo com as disciplinas do 3º trimestre escolar</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary-container text-[20px]">check</span>
+<span>Atividades de revisão e simulados</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary-container text-[20px]">check</span>
+<span>Acompanhamento da evolução pela família</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary-container text-[20px]">check</span>
+<span>5 camadas completas de domínio cognitivo</span>
+</div>
+</div>
+</div>
+<button class="w-full py-4 rounded-full bg-surface-container-low text-primary font-label-md text-label-md font-bold hover:bg-brand-blue-soft transition-all" type="button">
+            Garantir vaga do 4º ano
+          </button>
+</div>
+<!-- Card 2: 8º Ano (DESTAQUE / MAIS POPULAR) -->
+<div class="relative bg-surface-card rounded-lg p-8 shadow-xl flex flex-col justify-between gap-6 hover:shadow-[0_20px_40px_rgba(37,99,235,0.14)] transition-all">
+<!-- Top Badge Pill -->
+<div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-secondary-container text-on-secondary px-4 py-1 rounded-full font-label-sm text-label-sm font-bold shadow-md">
+            Mais Procurado
+          </div>
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<span class="px-4 py-1.5 rounded-full bg-brand-sunshine text-on-secondary-container font-label-sm text-label-sm font-bold">
+                Ensino Fundamental II
+              </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Até 31/12/2026</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold">8º Ano</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                Biologia, Física, Química, Português, História e Geografia.
+              </p>
+</div>
+<div class="py-2">
+<div class="flex items-baseline gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface-variant">R$</span>
+<span class="font-headline-lg text-headline-lg text-primary-container font-bold">357,00</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Pix ou cartão • Acesso integral até 31/12/2026</p>
+</div>
+<div class="pt-4 border-t border-surface-variant/40 flex flex-col gap-3 font-body-sm text-body-sm text-on-surface">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary-container text-[20px]">check</span>
+<span>Módulo com as disciplinas do 3º trimestre escolar</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary-container text-[20px]">check</span>
+<span>Revisões planejadas e simulados estratégicos</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary-container text-[20px]">check</span>
+<span>Painel de evolução completo para a família</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary-container text-[20px]">check</span>
+<span>Todas as 6 disciplinas estruturadas na metodologia</span>
+</div>
+</div>
+</div>
+<button class="w-full py-4 rounded-full bg-primary-container text-on-primary font-label-md text-label-md font-bold shadow-[0_8px_20px_-4px_rgba(37,99,235,0.4)] hover:scale-[1.01] hover:opacity-95 transition-all" type="button">
+            Garantir vaga do 8º ano
+          </button>
+</div>
+</div>
+<!-- Trust Assurance Box -->
+<div class="max-w-2xl mx-auto w-full bg-surface-container-low rounded-full py-4 px-6 flex flex-wrap items-center justify-center gap-6 text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]">lock</span>
+          Pagamento 100% Seguro
+        </span>
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-tertiary text-[18px]">verified_user</span>
+          Garantia incondicional de 7 dias
+        </span>
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary-container text-[18px]">support_agent</span>
+          Suporte Pedagógico
+        </span>
+</div>
+</div>
+</section>
+<!-- 7. FINAL CTA -->
+<section class="w-full py-space-xl lg:py-space-xxl bg-gradient-to-br from-primary via-primary-container to-on-primary-fixed-variant text-on-primary relative overflow-hidden">
+<!-- Ambient glow inside CTA -->
+<div class="absolute -bottom-24 -right-24 w-80 h-80 rounded-full bg-brand-sunshine/20 blur-3xl pointer-events-none"></div>
+<div class="max-w-4xl mx-auto px-6 lg:px-12 text-center flex flex-col items-center gap-6 relative z-10">
+<span class="px-4 py-1.5 rounded-full bg-surface-container-lowest/10 text-brand-sunshine font-label-sm text-label-sm font-bold tracking-wide uppercase">
+        Comece hoje mesmo
+      </span>
+<h2 class="font-headline-lg text-headline-lg text-on-primary max-w-2xl">
+        Transforme o próximo boletim antes que o desespero de véspera comece.
+      </h2>
+<p class="font-body-lg text-body-lg text-on-primary-container max-w-xl">
+        O seu filho é plenamente capaz. Ele só precisa do método certo para organizar a atenção, combater a ilusão de aprendizado e provar o que sabe.
+      </p>
+<div class="flex flex-col sm:flex-row items-center gap-4 pt-4 w-full sm:w-auto">
+<a class="w-full sm:w-auto px-10 py-4 rounded-full bg-secondary-container text-on-secondary font-label-lg text-label-lg shadow-[0_12px_28px_rgba(254,166,25,0.35)] hover:scale-[1.02] transition-all" href="#planos">
+          Começar agora com suporte pedagógico
+        </a>
+</div>
+<div class="pt-6 flex flex-wrap items-center justify-center gap-6 text-on-primary-container font-label-sm text-label-sm opacity-90">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">school</span>
+          Metodologia testada e aprovada
+        </span>
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">devices</span>
+          Acesso no celular, tablet e computador
+        </span>
+</div>
+</div>
+</section>
+<!-- Client-side Interactive Script -->
+<script>
+    (function() {
+      // Font size adjustment for cognitive accessibility
+      let currentScale = 1;
+      const btnInc = document.getElementById('btn-font-inc');
+      const btnDec = document.getElementById('btn-font-dec');
+      const rootMain = document.querySelector('main') || document.body;
+
+      if (btnInc && btnDec) {
+        btnInc.addEventListener('click', function() {
+          if (currentScale < 1.25) {
+            currentScale += 0.05;
+            rootMain.style.fontSize = (currentScale * 100) + '%';
+          }
+        });
+        btnDec.addEventListener('click', function() {
+          if (currentScale > 0.9) {
+            currentScale -= 0.05;
+            rootMain.style.fontSize = (currentScale * 100) + '%';
+          }
+        });
+      }
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-low text-on-surface-variant pt-space-xxl pb-space-lg"><div class="max-w-7xl mx-auto px-6 lg:px-12"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-xl pb-space-xl"><div class="lg:col-span-2 flex flex-col gap-4"><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-primary-container flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[20px]">school</span></div><span class="font-headline-md text-headline-sm text-primary font-bold">Akili<span class="text-secondary-container ml-1">Educ</span></span></div><p class="font-body-md text-body-md text-on-surface-variant max-w-md">Aprendizagem acolhedora, neuro-inclusiva e cientificamente embasada para transformar a rotina educativa das crianças com carinho e segurança.</p><div class="flex items-center gap-3 text-primary"><span class="material-symbols-outlined p-2 rounded-full bg-surface-container-lowest text-[20px] shadow-[0_2px_8px_rgba(37,99,235,0.08)]">public</span><span class="material-symbols-outlined p-2 rounded-full bg-surface-container-lowest text-[20px] shadow-[0_2px_8px_rgba(37,99,235,0.08)]">forum</span><span class="material-symbols-outlined p-2 rounded-full bg-surface-container-lowest text-[20px] shadow-[0_2px_8px_rgba(37,99,235,0.08)]">smart_display</span></div></div><div><h4 class="font-title-card text-title-card text-on-surface mb-4">Plataforma</h4><ul class="flex flex-col gap-3 font-body-sm text-body-sm"><li data-path="o-metodo"><a class="hover:text-primary transition-colors" href="#">O Método</a></li><li data-path="como-funciona"><a class="hover:text-primary transition-colors" href="#">Como Funciona</a></li><li data-path="para-a-familia"><a class="hover:text-primary transition-colors" href="#">Para a Família</a></li><li data-path="planos"><a class="hover:text-primary transition-colors" href="#">Planos e Preços</a></li></ul></div><div><h4 class="font-title-card text-title-card text-on-surface mb-4">Suporte</h4><ul class="flex flex-col gap-3 font-body-sm text-body-sm"><li data-path="faq"><a class="hover:text-primary transition-colors" href="#">Perguntas Frequentes</a></li><li><a class="hover:text-primary transition-colors" href="#">Central de Ajuda</a></li><li><a class="hover:text-primary transition-colors" href="#">Segurança e Privacidade</a></li><li><a class="hover:text-primary transition-colors" href="#">Acessibilidade</a></li></ul></div><div><h4 class="font-title-card text-title-card text-on-surface mb-4">Boletim da Família</h4><p class="font-body-sm text-body-sm text-on-surface-variant mb-4">Receba dicas práticas de educação e neurodesenvolvimento.</p><form class="flex flex-col gap-2"><input class="w-full px-4 py-2.5 rounded-full bg-surface-container-lowest border-0 ring-1 ring-outline-variant/50 font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary-container" placeholder="Seu melhor e-mail" type="email"/><button class="w-full py-2.5 rounded-full bg-primary-container text-on-primary font-label-md text-label-md font-bold shadow-[0_4px_12px_rgba(37,99,235,0.2)] hover:opacity-95 transition-all" type="button">Inscrever-se</button></form></div></div><div class="pt-space-lg border-t border-surface-variant/50 flex flex-col sm:flex-row items-center justify-between gap-4 font-body-sm text-body-sm"><p>© 2025 Akili Educ. Todos os direitos reservados. Educação com afeto e ciência.</p><div class="flex items-center gap-6"><a class="hover:text-primary transition-colors" href="#">Termos de Uso</a><a class="hover:text-primary transition-colors" href="#">Privacidade</a></div></div></div></footer></body></html>
