@@ -3,11 +3,9 @@
 
     var pages = [
         { href: "index.html", label: "Índice" },
-        { href: "lp1.html", label: "Landing Page 1" },
-        { href: "lp2.html", label: "Landing Page 2" },
-        { href: "lp3.html", label: "Landing Page 3" },
-        { href: "lp4.html", label: "Landing Page 4" },
-        { href: "lp5.html", label: "Landing Page 5" },
+        { href: "jabatec01.html", label: "Jabatec 1" },
+        { href: "jabatec02.html", label: "Jabatec 2" },
+        { href: "jabatec03.html", label: "Jabatec 3" },
     ];
 
     var current = (location.pathname.split("/").pop() || "index.html").toLowerCase();
@@ -18,7 +16,7 @@
         "body{padding-top:" +
         barHeight +
         "px !important;}" +
-        "header.fixed,.fixed.top-0{top:" +
+        "header.fixed,header.site,.fixed.top-0{top:" +
         barHeight +
         "px !important;}" +
         "#lp-switcher{position:fixed;top:0;left:0;right:0;height:" +

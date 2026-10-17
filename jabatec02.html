@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jabatec — Engenharia com diagnóstico</title>
+  <meta name="description" content="Consultoria, engenharia e inteligência artificial para produtos B2B, B2C e B2G. Diagnóstico técnico em até 48 horas úteis.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #02040A;
+      --surface: #0A1128;
+      --navy: #000080;
+      --accent: #00FFEF;
+      --accent-dim: rgba(0, 255, 239, 0.1);
+      --text: #F8FAFC;
+      --muted: #94A3B8;
+      --border: rgba(148, 163, 184, 0.15);
+      --sans: "Inter", system-ui, sans-serif;
+      --mono: "JetBrains Mono", ui-monospace, monospace;
+      --container: 1240px;
+      --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    button, input, textarea { font: inherit; color: inherit; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+    .container { width: min(var(--container), calc(100% - 48px)); margin: 0 auto; }
+    .kicker {
+      margin: 0 0 8px;
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: clamp(2.4rem, 5vw, 3.5rem); font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; }
+    h2 { font-size: clamp(1.7rem, 3vw, 2.25rem); font-weight: 600; letter-spacing: -0.01em; line-height: 1.2; }
+    .muted { color: var(--muted); }
+    .section { position: relative; padding: 96px 0; }
+    .section-head { display: flex; justify-content: space-between; gap: 32px; align-items: flex-end; margin-bottom: 40px; }
+    .section-head .copy { max-width: 720px; }
+    .section-head .copy p { margin-top: 12px; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 44px;
+      padding: 12px 24px;
+      border-radius: 6px;
+      border: 1px solid transparent;
+      text-decoration: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: box-shadow 0.3s var(--ease), background 0.3s var(--ease), border-color 0.3s var(--ease), transform 0.3s var(--ease), color 0.3s var(--ease);
+    }
+    .btn-primary { background: var(--accent); color: var(--bg); }
+    .btn-primary:hover { box-shadow: 0 0 24px rgba(0, 255, 239, 0.28); transform: translateY(-2px); }
+    .btn-ghost { background: transparent; color: var(--text); border-color: var(--border); }
+    .btn-ghost:hover { border-color: rgba(0, 255, 239, 0.45); color: var(--accent); transform: translateY(-2px); }
+    .icon-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+      transition: border-color 0.3s var(--ease), color 0.3s var(--ease), transform 0.3s var(--ease);
+    }
+    .icon-btn:hover { border-color: rgba(0, 255, 239, 0.45); color: var(--accent); transform: translateY(-2px); }
+
+    header.site {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 20;
+      background: rgba(2, 4, 10, 0.72);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 700; letter-spacing: 0.08em; }
+    .brand-mark { width: 10px; height: 10px; background: var(--accent); border-radius: 2px; transition: box-shadow 0.3s var(--ease), transform 0.3s var(--ease); }
+    .brand:hover .brand-mark { box-shadow: 0 0 12px var(--accent); transform: scale(1.15); }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links a { text-decoration: none; color: var(--muted); font-size: 0.95rem; transition: color 0.25s var(--ease); }
+    .nav-links a:hover { color: var(--accent); }
+    .menu-btn { display: none; background: none; border: 0; padding: 8px; cursor: pointer; }
+    .menu-btn span { display: block; width: 20px; height: 1.5px; background: var(--text); margin: 5px 0; }
+
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      padding: 120px 0 80px;
+      background:
+        radial-gradient(900px 480px at 50% 20%, rgba(0, 0, 128, 0.45), transparent 70%),
+        var(--bg);
+    }
+    .field, .veil { position: absolute; inset: -20%; pointer-events: none; }
+    .field {
+      background:
+        radial-gradient(40% 40% at 20% 30%, rgba(0, 0, 128, 0.85), transparent 70%),
+        radial-gradient(36% 36% at 78% 62%, rgba(0, 255, 239, 0.14), transparent 68%),
+        radial-gradient(28% 28% at 55% 80%, rgba(0, 0, 128, 0.55), transparent 70%);
+      animation: drift 18s ease-in-out infinite alternate;
+    }
+    .veil {
+      background: linear-gradient(115deg, transparent 30%, rgba(248, 250, 252, 0.04) 48%, transparent 62%);
+      animation: sweep 14s linear infinite;
+    }
+    @keyframes drift {
+      from { transform: translate3d(-2%, -1%, 0) scale(1); }
+      to { transform: translate3d(3%, 2%, 0) scale(1.06); }
+    }
+    @keyframes sweep {
+      from { transform: translateX(-20%); }
+      to { transform: translateX(20%); }
+    }
+    .hero-inner { position: relative; z-index: 1; max-width: 860px; text-align: center; }
+    .hero-inner h1 { margin-bottom: 20px; }
+    .lede { color: var(--muted); font-size: 1.125rem; max-width: 640px; margin: 0 auto 32px; }
+    .cta-row { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+
+    .marquee-wrap {
+      position: relative;
+      border-block: 1px solid var(--border);
+      background: rgba(10, 17, 40, 0.55);
+      padding: 28px 0;
+      overflow: hidden;
+    }
+    .marquee-label {
+      text-align: center;
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+    .marquee { overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+    .marquee-track { display: flex; width: max-content; animation: scroll-x 28s linear infinite; }
+    .marquee:hover .marquee-track { animation-play-state: paused; }
+    .logo-set { display: flex; align-items: center; gap: 64px; padding-right: 64px; }
+    .wordmark {
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text);
+      opacity: 0.82;
+      white-space: nowrap;
+      transition: color 0.25s var(--ease), opacity 0.25s var(--ease);
+    }
+    .wordmark:hover { color: var(--accent); opacity: 1; }
+    .wordmark small { display: block; letter-spacing: 0.08em; font-family: var(--mono); font-size: 0.68rem; color: var(--muted); font-weight: 500; }
+    @keyframes scroll-x { to { transform: translateX(-50%); } }
+
+    .squeeze { position: relative; display: flex; gap: 10px; height: 340px; }
+    .squeeze-card {
+      --grow: 0.3;
+      --slot: 5;
+      --grow-hover: 1.25;
+      flex: var(--grow) 1 0;
+      order: var(--slot);
+      min-width: 0;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--surface);
+      padding: 8px;
+      text-align: left;
+      cursor: pointer;
+      overflow: hidden;
+      transition: flex-grow 0.55s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.4s var(--ease), box-shadow 0.4s var(--ease);
+    }
+    .squeeze-card:nth-child(1) { --grow: 8.6; --slot: 0; --grow-hover: 8.6; }
+    .squeeze-card:nth-child(2) { --grow: 2.2; --slot: 1; --grow-hover: 3.4; }
+    .squeeze-card:nth-child(3) { --grow: 1.28; --slot: 2; --grow-hover: 2.8; }
+    .squeeze-card:nth-child(4) { --grow: 0.78; --slot: 3; --grow-hover: 1.8; }
+    .squeeze-card:nth-child(5) { --grow: 0.48; --slot: 4; --grow-hover: 1.4; }
+    .squeeze-card:nth-child(6) { --grow: 0.3; --slot: 5; --grow-hover: 1.25; }
+    .squeeze-card.is-active {
+      border-color: rgba(0, 255, 239, 0.45);
+      box-shadow: 0 0 24px rgba(0, 255, 239, 0.1);
+    }
+    @media (min-width: 761px) {
+      .squeeze-card:not(.is-active):hover {
+        flex-grow: var(--grow-hover);
+        border-color: rgba(0, 255, 239, 0.5);
+      }
+      .squeeze:has(.squeeze-card:not(.is-active):hover) .squeeze-card.is-active {
+        flex-grow: calc(var(--grow) * 0.84);
+      }
+    }
+    .mock {
+      height: 100%;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background:
+        linear-gradient(180deg, rgba(0, 255, 239, 0.08), transparent 40%),
+        #02040A;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), filter 0.45s var(--ease);
+    }
+    .squeeze-card.is-active:hover .mock { transform: scale(1.045); }
+    .squeeze-card:not(.is-active):hover .mock { filter: brightness(1.18); }
+    .mock-top, .bars, .nodes { display: flex; gap: 8px; }
+    .pill { height: 8px; width: 72px; border-radius: 4px; background: rgba(0, 255, 239, 0.35); }
+    .bar { height: 8px; border-radius: 4px; background: rgba(148, 163, 184, 0.25); }
+    .bar.a { width: 46%; } .bar.b { width: 72%; } .bar.c { width: 34%; }
+    .node { width: 36px; height: 36px; border: 1px solid rgba(0, 255, 239, 0.35); border-radius: 6px; }
+    .mock-name { font-family: var(--mono); font-size: 0.8rem; color: var(--accent); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .squeeze-copy { overflow: hidden; margin-top: 28px; }
+    .squeeze-track { display: flex; transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
+    .case-copy { flex: 0 0 100%; padding-right: 12%; }
+    .case-copy h3 { font-size: 1.35rem; margin-bottom: 8px; }
+    .case-copy .pain { color: var(--muted); margin-bottom: 16px; max-width: 640px; }
+    .metric {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 0.875rem;
+      color: var(--accent);
+      background: var(--accent-dim);
+      border: 1px solid rgba(0, 255, 239, 0.28);
+      border-radius: 6px;
+      padding: 8px 12px;
+    }
+    .controls { display: flex; gap: 8px; }
+
+    .quote {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 32px;
+      align-items: start;
+      padding: 8px 0 0;
+    }
+    .client-mark {
+      width: 96px;
+      height: 96px;
+      border-radius: 8px;
+      border: 1px solid rgba(0, 255, 239, 0.35);
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: var(--surface);
+    }
+    .quote blockquote { margin: 0; font-size: clamp(1.25rem, 2vw, 1.7rem); font-weight: 500; line-height: 1.35; letter-spacing: -0.01em; }
+    .bio { display: flex; gap: 14px; align-items: center; margin-top: 28px; }
+    .bio-mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      background: var(--accent-dim);
+      border: 1px solid rgba(0, 255, 239, 0.3);
+      display: grid;
+      place-items: center;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .bio strong { display: block; font-weight: 600; }
+    .bio span { font-family: var(--mono); font-size: 0.8rem; color: var(--accent); }
+
+    .rail {
+      list-style: none;
+      margin: 0;
+      padding: 28px 0 0;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      position: relative;
+    }
+    .rail::before {
+      content: "";
+      position: absolute;
+      top: 46px;
+      left: 8%;
+      right: 8%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(0, 255, 239, 0.55), transparent);
+    }
+    .rail li {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 22px 18px 18px;
+      position: relative;
+    }
+    .idx {
+      display: inline-grid;
+      place-items: center;
+      min-width: 36px;
+      height: 28px;
+      padding: 0 8px;
+      margin-bottom: 14px;
+      border-radius: 4px;
+      background: var(--bg);
+      border: 1px solid rgba(0, 255, 239, 0.4);
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--accent);
+    }
+    .rail h3 { font-size: 1.05rem; margin-bottom: 8px; }
+    .rail p { color: var(--muted); font-size: 0.92rem; }
+    .legend {
+      margin: 16px 0 0;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--accent);
+      line-height: 1.5;
+    }
+
+    .team-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+    .team-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px;
+      min-height: 280px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: border-color 0.3s var(--ease), box-shadow 0.3s var(--ease), transform 0.3s var(--ease);
+    }
+    .team-card:hover { border-color: rgba(0, 255, 239, 0.45); box-shadow: 0 0 24px rgba(0, 255, 239, 0.12); transform: translateY(-4px); }
+    .avatar { transition: background 0.3s var(--ease), box-shadow 0.3s var(--ease), transform 0.3s var(--ease); }
+    .team-card:hover .avatar { transform: scale(1.08); box-shadow: 0 0 16px rgba(0, 255, 239, 0.22); }
+    .avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 1px solid rgba(0, 255, 239, 0.4);
+      background: var(--accent-dim);
+      display: grid;
+      place-items: center;
+      color: var(--accent);
+    }
+    .team-card h3 { font-size: 1rem; }
+    .specialty { font-family: var(--mono); font-size: 0.75rem; color: var(--accent); }
+    .team-card p { color: var(--muted); font-size: 0.9rem; }
+    .initials {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: #111833;
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .super-label { font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+    .status { margin-top: auto; font-family: var(--mono); font-size: 0.75rem; color: var(--muted); display: flex; align-items: center; gap: 8px; }
+    .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+
+    .contact-card {
+      max-width: 760px;
+      margin: 0 auto;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 48px 40px;
+      text-align: center;
+    }
+    .contact-card h2 { margin-bottom: 12px; }
+    .channels { font-family: var(--mono); font-size: 0.8rem; color: var(--accent); margin: 20px 0 28px; }
+    form { text-align: left; display: grid; gap: 16px; }
+    label { display: block; font-weight: 600; font-size: 0.92rem; margin-bottom: 6px; }
+    input, textarea {
+      width: 100%;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 12px 14px;
+    }
+    input:focus, textarea:focus { border-color: var(--accent); outline: none; }
+    .check { display: flex; gap: 10px; align-items: flex-start; font-size: 0.9rem; color: var(--muted); }
+    .check input { width: auto; margin-top: 4px; }
+    .form-note { display: flex; justify-content: center; gap: 8px; color: var(--muted); font-family: var(--mono); font-size: 0.75rem; text-align: center; }
+    .form-error { color: #fecaca; font-size: 0.9rem; }
+    .success { border: 1px solid rgba(0, 255, 239, 0.35); background: var(--accent-dim); border-radius: 8px; padding: 20px; color: var(--accent); }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 0 40px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .foot { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    footer a { color: var(--muted); }
+
+    .quote {
+      position: relative;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 32px;
+      background: rgba(10, 17, 40, 0.45);
+    }
+    .quote::after, .contact-card::after, .console::after, .matrix::after {
+      content: "";
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 16px;
+      height: 16px;
+      border-top: 1px solid rgba(0, 255, 239, 0.55);
+      border-right: 1px solid rgba(0, 255, 239, 0.55);
+      pointer-events: none;
+    }
+    .contact-card, .console, .matrix { position: relative; }
+    .client-mark, .bio-mark { transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease); }
+    .quote:hover .client-mark { transform: scale(1.06); box-shadow: 0 0 18px rgba(0, 255, 239, 0.18); }
+    .cross { width: 28px; height: 28px; margin-bottom: 16px; position: relative; }
+    .cross::before, .cross::after { content: ""; position: absolute; background: rgba(0, 255, 239, 0.75); }
+    .cross::before { width: 1px; height: 28px; left: 13px; }
+    .cross::after { height: 1px; width: 28px; top: 13px; }
+    .chips li { transition: border-color 0.25s var(--ease), color 0.25s var(--ease); }
+    .chips li:hover { border-color: rgba(0, 255, 239, 0.55); color: var(--accent); }
+    .console-nav button { transition: background 0.25s var(--ease); }
+    .console-nav button:hover { background: rgba(0, 255, 239, 0.06); }
+    .rail li { transition: border-color 0.3s var(--ease), transform 0.3s var(--ease), box-shadow 0.3s var(--ease); }
+    .rail li:hover { border-color: rgba(0, 255, 239, 0.45); transform: translateY(-4px); box-shadow: 0 0 20px rgba(0, 255, 239, 0.1); }
+    .matrix > div { transition: background 0.25s var(--ease); }
+    .matrix .cell:hover, .matrix [role="rowheader"]:hover { background: rgba(0, 255, 239, 0.06); }
+    .contact-card { transition: border-color 0.3s var(--ease), box-shadow 0.3s var(--ease); }
+    .contact-card:hover { border-color: rgba(0, 255, 239, 0.35); box-shadow: 0 0 28px rgba(0, 255, 239, 0.08); }
+    input, textarea { transition: border-color 0.25s var(--ease), box-shadow 0.25s var(--ease); }
+    input:hover, textarea:hover { border-color: rgba(0, 255, 239, 0.35); }
+    footer a { transition: color 0.25s var(--ease); }
+    footer a:hover { color: var(--accent); }
+    .metric { transition: box-shadow 0.25s var(--ease), transform 0.25s var(--ease); }
+    .metric:hover { box-shadow: 0 0 16px rgba(0, 255, 239, 0.16); transform: translateY(-1px); }
+
+    #equipe {
+      background-image: radial-gradient(rgba(0, 255, 239, 0.15) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    #servicos {
+      background-image:
+        radial-gradient(42% 55% at 12% 28%, rgba(0, 0, 128, 0.72), transparent 70%),
+        radial-gradient(36% 48% at 88% 78%, rgba(0, 255, 239, 0.09), transparent 68%);
+    }
+    #contato {
+      background-image: linear-gradient(rgba(148, 163, 184, 0.055) 1px, transparent 1px);
+      background-size: 100% 32px;
+    }
+
+    @media (max-width: 980px) {
+      .team-grid { grid-template-columns: 1fr 1fr; }
+      .rail { grid-template-columns: 1fr 1fr; }
+      .rail::before { display: none; }
+      .quote { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 760px) {
+      .container { width: min(var(--container), calc(100% - 32px)); }
+      .menu-btn { display: block; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: rgba(2, 4, 10, 0.96);
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 16px 24px 24px;
+        gap: 16px;
+      }
+      .nav-links.is-open { display: flex; }
+      .section { padding: 72px 0; }
+      .section-head { flex-direction: column; align-items: flex-start; }
+      .controls { display: none; }
+      .squeeze { flex-direction: column; height: auto; }
+      .squeeze-card, .squeeze-card.is-active { flex: none !important; order: 0 !important; width: auto !important; transform: none !important; position: static !important; }
+      .mock { height: 160px; }
+      .squeeze-copy { display: none; }
+      .case-inline { display: block; color: var(--muted); font-size: 0.85rem; margin-top: 8px; }
+      .team-grid, .rail { grid-template-columns: 1fr; }
+      .contact-card { padding: 28px 18px; }
+      .field, .veil { animation: none; }
+    }
+    @media (min-width: 761px) { .case-inline { display: none; } }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site">
+    <div class="container nav">
+      <a class="brand" href="#topo"><span class="brand-mark" aria-hidden="true"></span> JABATEC</a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span><span></span>
+        <span class="sr" style="position:absolute;left:-999px">Abrir menu</span>
+      </button>
+      <nav class="nav-links" id="menu">
+        <a href="#cases">Cases</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#equipe">Equipe</a>
+        <a href="#contato">Contato</a>
+        <a class="btn btn-primary" href="#contato">Solicitar diagnóstico</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="topo">
+    <section class="hero" aria-label="Apresentação">
+      <div class="field" aria-hidden="true"></div>
+      <div class="veil" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <h1>Transformamos ideias que resolvem dores da sociedade em tecnologia escalável.</h1>
+        <p class="lede">Consultoria, engenharia e inteligência artificial para produtos B2B, B2C e B2G. O diagnóstico técnico volta em até 48 horas úteis.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#contato">Solicitar diagnóstico</a>
+          <a class="btn btn-ghost" href="#cases">Ver cases</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="marquee-wrap" aria-label="Clientes">
+      <p class="marquee-label">Quem já construiu com a Jabatec</p>
+      <div class="marquee">
+        <div class="marquee-track">
+          <div class="logo-set">
+            <span class="wordmark">Tatour <small>Turismo</small></span>
+            <span class="wordmark">Servclub <small>Parque aquático</small></span>
+            <span class="wordmark">RSSOLTEL <small>Governança tecnológica</small></span>
+            <span class="wordmark">AIVI <small>Educação pública</small></span>
+            <span class="wordmark">PayEvents <small>Inscrições</small></span>
+          </div>
+          <div class="logo-set" aria-hidden="true">
+            <span class="wordmark">Tatour <small>Turismo</small></span>
+            <span class="wordmark">Servclub <small>Parque aquático</small></span>
+            <span class="wordmark">RSSOLTEL <small>Governança tecnológica</small></span>
+            <span class="wordmark">AIVI <small>Educação pública</small></span>
+            <span class="wordmark">PayEvents <small>Inscrições</small></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="cases">
+      <div class="container">
+        <div class="section-head">
+          <div class="copy">
+            <p class="kicker">Portfólio</p>
+            <h2>O que está em produção</h2>
+            <p class="muted">Veja os cases da Jabatec. Cada um saiu de uma dor concreta e virou sistema em operação.</p>
+          </div>
+          <div class="controls">
+            <button class="icon-btn" type="button" id="prev" aria-label="Case anterior">←</button>
+            <button class="icon-btn" type="button" id="next" aria-label="Próximo case">→</button>
+          </div>
+        </div>
+        <div class="squeeze" id="squeeze">
+          <button class="squeeze-card is-active" type="button" data-index="0" aria-pressed="true">
+            <div class="mock">
+              <div class="mock-top"><span class="pill"></span><span class="pill" style="width:40px;opacity:.5"></span></div>
+              <div class="bars" style="flex-direction:column"><span class="bar b"></span><span class="bar a"></span><span class="bar c"></span></div>
+              <span class="mock-name">AIVI · educação</span>
+            </div>
+            <span class="case-inline">IA para adaptar atividades em rede pública de ensino.</span>
+          </button>
+          <button class="squeeze-card" type="button" data-index="1" aria-pressed="false">
+            <div class="mock">
+              <div class="nodes"><span class="node"></span><span class="node"></span><span class="node"></span></div>
+              <div class="bars" style="flex-direction:column"><span class="bar a"></span><span class="bar c"></span></div>
+              <span class="mock-name">PGRS · resíduos</span>
+            </div>
+            <span class="case-inline">Plano de resíduos com trilha alinhada à legislação.</span>
+          </button>
+          <button class="squeeze-card" type="button" data-index="2" aria-pressed="false">
+            <div class="mock">
+              <div class="bars" style="align-items:flex-end;height:80px"><span class="bar" style="height:40%;width:18px"></span><span class="bar" style="height:70%;width:18px"></span><span class="bar" style="height:100%;width:18px;background:rgba(0,255,239,.45)"></span></div>
+              <span class="mock-name">PayEvents · checkout</span>
+            </div>
+            <span class="case-inline">Pagamento desacoplado para pico de inscrições.</span>
+          </button>
+          <button class="squeeze-card" type="button" data-index="3" aria-pressed="false">
+            <div class="mock">
+              <div class="nodes"><span class="node"></span><span class="node"></span></div>
+              <div class="bars" style="flex-direction:column"><span class="bar b"></span><span class="bar a"></span></div>
+              <span class="mock-name">Akili · escala</span>
+            </div>
+            <span class="case-inline">Reforço escolar personalizado levado à rede pública.</span>
+          </button>
+          <button class="squeeze-card" type="button" data-index="4" aria-pressed="false">
+            <div class="mock">
+              <div class="mock-top"><span class="pill"></span><span class="pill" style="width:28px;opacity:.45"></span></div>
+              <div class="bars" style="flex-direction:column"><span class="bar c"></span><span class="bar b"></span><span class="bar a"></span></div>
+              <span class="mock-name">Tatour · passeios</span>
+            </div>
+            <span class="case-inline">E-commerce de passeios com reserva e pagamento.</span>
+          </button>
+          <button class="squeeze-card" type="button" data-index="5" aria-pressed="false">
+            <div class="mock">
+              <div class="bars" style="align-items:flex-end;height:80px"><span class="bar" style="height:55%;width:18px"></span><span class="bar" style="height:80%;width:18px"></span><span class="bar" style="height:35%;width:18px;background:rgba(0,255,239,.45)"></span></div>
+              <span class="mock-name">Servclub · convênios</span>
+            </div>
+            <span class="case-inline">Painel de sócios, acessos e mensalidades.</span>
+          </button>
+        </div>
+        <div class="squeeze-copy">
+          <div class="squeeze-track" id="copy-track">
+            <article class="case-copy">
+              <h3>AIVI: IA para neurodivergência</h3>
+              <p class="pain">A dor: transformar um método científico em ferramenta que a rede pública consiga operar. A resposta foi uma plataforma que levanta o perfil e adapta a atividade pedagógica.</p>
+              <span class="metric">Implantação em rede pública · RN</span>
+            </article>
+            <article class="case-copy">
+              <h3>PGRS Digital: gestão de resíduos</h3>
+              <p class="pain">A dor: a exigência do plano de resíduos para médias e grandes empresas. O sistema organiza os dados e apoia o técnico habilitado na emissão do laudo.</p>
+              <span class="metric">Preparação para a meta legal de 2027</span>
+            </article>
+            <article class="case-copy">
+              <h3>PayEvents: checkout de inscrições</h3>
+              <p class="pain">A dor: pico de compras simultâneas em eventos, sem fila e sem queda. O fluxo de pagamento foi separado em serviços e filas de liquidação.</p>
+              <span class="metric">Checkout estável em pico de inscrição</span>
+            </article>
+            <article class="case-copy">
+              <h3>Akili: do reforço escolar à rede pública</h3>
+              <p class="pain">A dor: escalar uma metodologia de reforço personalizado, ainda manual e B2C, para redes de ensino. A resposta foi a modelagem do negócio e uma plataforma adaptativa. O sistema entrou na rede de São Gonçalo do Amarante (RN), no ecossistema euGov.</p>
+              <span class="metric">Escala: B2C → B2G</span>
+            </article>
+            <article class="case-copy">
+              <h3>Tatour: venda de passeios</h3>
+              <p class="pain">A dor: digitalizar a venda de passeios, com compra fluida para o turista e gestão para o operador. A resposta foi um e-commerce com catálogo, pagamento e reserva no mesmo fluxo. A operação passou a um único painel, com mais conversão nas vendas online.</p>
+              <span class="metric">Foco: UX e conversão</span>
+            </article>
+            <article class="case-copy">
+              <h3>Servclub: convênios e mensalidades</h3>
+              <p class="pain">A dor: convênios, cadastro de sócios e mensalidades ainda em processo manual. A resposta foi um site com painel de validação de pagamentos e gestão de acessos. O controle financeiro foi 100% automatizado, com menos inadimplência e menos tempo da equipe administrativa.</p>
+              <span class="metric">Automação: fluxo financeiro</span>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0" id="relato">
+      <div class="container">
+        <div class="cross" aria-hidden="true"></div>
+        <p class="kicker">Relato</p>
+        <article class="quote">
+          <figure class="client-mark" aria-hidden="true">AIVI</figure>
+          <div>
+            <blockquote>A Jabatec não apenas codificou a ideia. Estruturou o negócio, enxergou o caminho B2G e entregou uma plataforma de IA para a educação pública.</blockquote>
+            <div class="bio">
+              <div class="bio-mark" aria-hidden="true">A</div>
+              <div>
+                <strong>Founder e gestor executivo</strong>
+                <span>AIVI · São Gonçalo do Amarante (RN)</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="servicos" style="background-color: rgba(10, 17, 40, 0.55);">
+      <div class="container">
+        <div class="section-head">
+          <div class="copy">
+            <p class="kicker">Serviços e stack</p>
+            <h2>Da tese à operação, na mesma esteira.</h2>
+            <p class="muted">Cada etapa carrega a tecnologia que a sustenta. A stack não é um catálogo solto: ela aparece debaixo do trabalho que justifica.</p>
+          </div>
+        </div>
+        <ol class="rail">
+          <li>
+            <span class="idx">01</span>
+            <h3>Consultoria e plano de negócio</h3>
+            <p>Benchmark, desenho da operação e conta de viabilidade. Engenharia só começa com a tese fechada.</p>
+            <p class="legend">Next.js · PostgreSQL</p>
+          </li>
+          <li>
+            <span class="idx">02</span>
+            <h3>Software sob medida</h3>
+            <p>APIs, web e mobile em ciclos curtos, com estabilidade e segurança como critério de pronto.</p>
+            <p class="legend">PHP 8 · Laravel · TypeScript · React · React Native</p>
+          </li>
+          <li>
+            <span class="idx">03</span>
+            <h3>IA e automação</h3>
+            <p>Modelos aplicados à regra de negócio, com registro do cálculo. A IA entra onde o processo já está descrito.</p>
+            <p class="legend">Python · FastAPI</p>
+          </li>
+          <li>
+            <span class="idx">04</span>
+            <h3>LGPD, homologação e escala</h3>
+            <p>Adequação à Lei 13.709/2018, entrega contínua e preparação para compra pública.</p>
+            <p class="legend">Docker · Kubernetes · Nginx · PostgreSQL</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="equipe">
+      <div class="container">
+        <div class="section-head">
+          <div class="copy">
+            <p class="kicker">Equipe</p>
+            <h2>Uma task-force no projeto, não um organograma de vitrine.</h2>
+            <p class="muted">Negócio, entrega, finanças, engenharia e arquitetura acompanham o mesmo escopo.</p>
+          </div>
+        </div>
+        <div class="team-grid">
+          <article class="team-card">
+            <div class="avatar" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19V5M4 19h16M8 19v-6M12 19V9M16 19v-4"/></svg>
+            </div>
+            <h3>Diretoria executiva</h3>
+            <p class="specialty">Liderança estratégica</p>
+            <p>Visão de produto, viabilidade do ecossistema e articulação com contas públicas e privadas.</p>
+          </article>
+          <article class="team-card">
+            <div class="avatar" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </div>
+            <h3>Gestão de projetos</h3>
+            <p class="specialty">Governança e B2G</p>
+            <p>Métodos ágeis, conformidade com a LGPD e comunicação contínua com quem decide o projeto.</p>
+          </article>
+          <article class="team-card">
+            <div class="avatar" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="6" width="18" height="14" rx="2"/><path d="M3 10h18M7 6V4M17 6V4"/></svg>
+            </div>
+            <h3>Diretoria financeira</h3>
+            <p class="specialty">Sustentabilidade fiscal</p>
+            <p>Modelagem de custo, margem e viabilidade econômica antes de prometer escala.</p>
+          </article>
+          <article class="team-card">
+            <div class="avatar" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/></svg>
+            </div>
+            <h3>Engenharia sênior</h3>
+            <p class="specialty">IA e segurança</p>
+            <p>Pesquisa aplicada em modelos, pipelines de dados e proteção do perímetro do produto.</p>
+          </article>
+          <article class="team-card">
+            <div class="avatar" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="6" cy="6" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="8" cy="18" r="2"/><path d="M8 7.5l8 1.2M7.2 16.2l9.2-6.4M8 16.5l.2-8"/></svg>
+            </div>
+            <h3>Arquitetura de software</h3>
+            <p class="specialty">Soluções e dados</p>
+            <p>Transforma dores complexas em algoritmos, fluxos de dados e estruturas prontas para crescer.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contato" style="background-color: rgba(10, 17, 40, 0.55);">
+      <div class="container">
+        <div class="contact-card">
+          <p class="kicker">Contato</p>
+          <h2>Tem uma ideia que pode mudar o mercado ou a sociedade?</h2>
+          <p class="muted">Conte a dor em poucas linhas. Retornamos em até 48 horas úteis para marcar o diagnóstico.</p>
+          <p class="channels">contato@jabatec.tec.br · (84) 99601-9094 · Natal, RN</p>
+          <form id="contact-form">
+            <div>
+              <label for="full-name">Nome completo</label>
+              <input id="full-name" name="nome" type="text" autocomplete="off" required placeholder="Seu nome">
+            </div>
+            <div>
+              <label for="corp-email">E-mail corporativo / WhatsApp</label>
+              <input id="corp-email" name="contato" type="text" autocomplete="off" required placeholder="contato@empresa.com.br ou (84) 90000-0000">
+            </div>
+            <div>
+              <label for="project-pain">Qual é a dor que o seu projeto resolve?</label>
+              <textarea id="project-pain" name="dor" rows="4" autocomplete="off" required placeholder="Descreva o problema, quem é afetado e o que precisa mudar."></textarea>
+            </div>
+            <label class="check">
+              <input id="consent" type="checkbox">
+              <span>Autorizo o uso destes dados para retorno sobre o diagnóstico, conforme a Lei 13.709/2018.</span>
+            </label>
+            <p class="form-error" id="form-error" hidden>Marque o consentimento para enviar.</p>
+            <button class="btn btn-primary" type="submit">Enviar meu projeto</button>
+            <p class="form-note">Seus dados não ficam gravados neste navegador. O retorno é em até 48 horas úteis.</p>
+          </form>
+          <div class="success" id="form-success" hidden>
+            Mensagem registrada neste protótipo. Em produção, o time retorna em até 48 horas úteis.
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container foot">
+      <span>© 2026 Jabatec. Natal, RN.</span>
+      <span>contato@jabatec.tec.br · (84) 99601-9094</span>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.querySelector(".menu-btn");
+    const menu = document.getElementById("menu");
+    menuBtn.addEventListener("click", () => {
+      const open = menu.classList.toggle("is-open");
+      menuBtn.setAttribute("aria-expanded", String(open));
+    });
+    menu.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => {
+      menu.classList.remove("is-open");
+      menuBtn.setAttribute("aria-expanded", "false");
+    }));
+
+    const cards = [...document.querySelectorAll(".squeeze-card")];
+    const track = document.getElementById("copy-track");
+    const squeeze = document.getElementById("squeeze");
+    const grows = [8.6, 2.2, 1.28, 0.78, 0.48, 0.3];
+    const motionOk = window.matchMedia("(prefers-reduced-motion: no-preference)").matches;
+    let index = 0;
+    let motionToken = 0;
+    function layout(active) {
+      const total = cards.length;
+      cards.forEach((card, i) => {
+        const slot = (i - active + total) % total;
+        const grow = grows[slot] ?? 0.3;
+        const hover = slot === 0 ? grow : Math.min(Math.max(grow * 2.25, 1.3), 3.4);
+        card.style.setProperty("--slot", String(slot));
+        card.style.setProperty("--grow", String(grow));
+        card.style.setProperty("--grow-hover", String(hover));
+        const on = i === active;
+        card.classList.toggle("is-active", on);
+        card.setAttribute("aria-pressed", String(on));
+      });
+    }
+    function releaseMotion() {
+      cards.forEach((card) => {
+        card.style.position = "";
+        card.style.left = "";
+        card.style.top = "";
+        card.style.height = "";
+        card.style.width = "";
+        card.style.flex = "";
+        card.style.transform = "";
+        card.style.transition = "";
+        card.style.zIndex = "";
+      });
+      squeeze.style.height = "";
+    }
+    function show(next) {
+      const total = cards.length;
+      const target = (next + total) % total;
+      if (target === index) return;
+      const stacked = window.matchMedia("(max-width: 760px)").matches;
+      if (!motionOk || stacked) {
+        index = target;
+        layout(index);
+        track.style.transform = "translateX(" + (-index * 100) + "%)";
+        return;
+      }
+      const run = ++motionToken;
+      const first = cards.map((card) => card.getBoundingClientRect());
+      const hostLeft = squeeze.getBoundingClientRect().left;
+      index = target;
+      layout(index);
+      const gap = 10;
+      const sum = grows.slice(0, total).reduce((acc, value) => acc + value, 0);
+      const inner = squeeze.clientWidth - gap * (total - 1);
+      const targets = [];
+      let cursor = 0;
+      for (let slot = 0; slot < total; slot += 1) {
+        const width = inner * ((grows[slot] ?? 0.3) / sum);
+        targets.push({ x: cursor, w: width });
+        cursor += width + gap;
+      }
+      squeeze.style.height = squeeze.offsetHeight + "px";
+      cards.forEach((card, i) => {
+        const fromX = first[i].left - hostLeft;
+        card.style.position = "absolute";
+        card.style.left = "0";
+        card.style.top = "0";
+        card.style.height = "100%";
+        card.style.flex = "none";
+        card.style.transition = "none";
+        card.style.width = first[i].width + "px";
+        card.style.transform = "translateX(" + fromX + "px)";
+        card.style.zIndex = "1";
+      });
+      squeeze.offsetWidth;
+      requestAnimationFrame(() => {
+        if (run !== motionToken) return;
+        cards.forEach((card, i) => {
+          const slot = (i - index + total) % total;
+          card.style.transition = "transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), width 0.7s cubic-bezier(0.22, 1, 0.36, 1)";
+          card.style.width = targets[slot].w + "px";
+          card.style.transform = "translateX(" + targets[slot].x + "px)";
+          card.style.zIndex = slot === 0 ? "3" : "1";
+        });
+      });
+      track.style.transform = "translateX(" + (-index * 100) + "%)";
+      window.setTimeout(() => {
+        if (run === motionToken) releaseMotion();
+      }, 760);
+    }
+    layout(0);
+    document.getElementById("prev").addEventListener("click", () => show(index - 1));
+    document.getElementById("next").addEventListener("click", () => show(index + 1));
+    cards.forEach((card) => card.addEventListener("click", () => show(Number(card.dataset.index))));
+
+    const form = document.getElementById("contact-form");
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const error = document.getElementById("form-error");
+      if (!document.getElementById("consent").checked) {
+        error.hidden = false;
+        return;
+      }
+      error.hidden = true;
+      form.hidden = true;
+      document.getElementById("form-success").hidden = false;
+    });
+  </script>
+<script src="site-nav.js"></script>
+</body>
+</html>
